@@ -65,13 +65,12 @@ class LinkedList {
         
         Node actual = head;
         //Buscamos el nodo anterior al que contiene el valor
-        while (actual.siguiente != null && actual.siguiente.data != data) {
+        while (actual.siguiente != null) {
+            if (actual.siguiente.data == data) {
+                actual.siguiente = actual.siguiente.siguiente;//Elimina el nodo
+                return; //Termina después de eliminar la primera ocurrencia
+            }
             actual = actual.siguiente;
-        }
-        
-        //Si el nodo es encontrado se elimina
-        if (actual.siguiente != null && actual.siguiente.data == data) {
-            actual.siguiente = actual.siguiente.siguiente;
         }
     }    
     //Método para mostrar todos los valores de la lista
