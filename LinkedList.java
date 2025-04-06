@@ -93,7 +93,7 @@ class LinkedList {
         while (actual != null) {
             siguiente = actual.siguiente;//Guardamos la referencia al siguiente nodo
             actual.siguiente = anterior;//Cambiamos el puntero al nodo anterior
-            anterior = actual;//Movemos prev al nodo actual
+            anterior = actual;//Movemos el anterior al nodo actual
             actual = siguiente;//Movemos dato al siguiente nodo
         }        
         head = anterior; 
