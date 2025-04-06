@@ -1,7 +1,7 @@
-# Lista Enlazada Simple en Java
-# Bernardo Canas
-# 202401637
-# Estructura de Datos - PARCIAL 2
+## Lista Enlazada Simple en Java
+## Bernardo Canas
+## 202401637
+## Estructura de Datos - PARCIAL 2
 
 ## Descripción: Este proyecto implementa una lista enlazada simple en Java, donde se almacenan los dígitos de un DPI el cual es ingresado por el usuario. Luego, se realizan las operaciones solicitadas sobre esta lista, inserción, eliminación, búsqueda y reversión.
 
