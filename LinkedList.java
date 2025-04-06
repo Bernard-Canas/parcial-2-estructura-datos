@@ -21,13 +21,13 @@ class LinkedList {
         nuevoNodo.siguiente = head;//El nuevo nodo apunta a la antigua cabeza
         head = nuevoNodo;//El nuevo nodo se convierte en la nueva cabeza
     }    
-    public void agregar_medio(int data, int position) {
-        if (position < 0) {
+    public void agregar_medio(int data, int posicion) {
+        if (posicion < 0) {
             System.out.println("Posición no válida.");
             return;
         }        
         //Si la posición es 0, es equivalente a agregar_primero
-        if (position == 0) {
+        if (posicion == 0) {
             agregar_primero(data);
             return;
         }        
@@ -36,7 +36,7 @@ class LinkedList {
         int posicion_actual = 0;
         
         //Avanzamos hasta la posición anterior a donde queremos insertar
-        while (actual != null && posicion_actual < position - 1) {
+        while (actual != null && posicion_actual < posicion - 1) {
             actual = actual.siguiente;
             posicion_actual++;
         }        
