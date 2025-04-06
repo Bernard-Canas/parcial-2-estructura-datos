@@ -62,16 +62,34 @@ class LinkedList {
             head = head.siguiente;
             return;
         }
-        
-        Node actual = head;
+
         //Buscamos el nodo anterior al que contiene el valor
-        while (actual.siguiente != null) {
-            if (actual.siguiente.data == data) {
-                actual.siguiente = actual.siguiente.siguiente;//Elimina el nodo
-                return; //Termina después de eliminar la primera ocurrencia
+        Node actual = head;
+        Node toDelete = null;   
+        
+        //Buscar el último nodo con el dato
+        while (actual != null) {
+            if (actual.data == data) {
+                toDelete = actual;
             }
             actual = actual.siguiente;
         }
+        
+        // Si no se encontró el dato
+        if (toDelete == null) return;
+        
+        // Caso especial: el nodo a eliminar es el head
+        if (toDelete == head) {
+            head = head.siguiente;
+            return;
+        }        
+        // Buscar el nodo anterior al que queremos eliminar
+        actual = head;
+        while (actual.siguiente != toDelete) {
+            actual = actual.siguiente;
+        }        
+        // Eliminar el nodo
+        actual.siguiente = toDelete.siguiente;
     }    
     //Método para mostrar todos los valores de la lista
     public void mostar_lista() {
